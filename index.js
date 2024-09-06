@@ -8,6 +8,7 @@ const port = 3001;
 app.use(cors());
 app.use(express.json()); 
 
+//local
 // Ejemplo: http://localhost:3001/wake/40:B0:34:1C:EE:E5   
 // El mac se emvia con ":" dos puntos 40:B0:34:1C:EE:E5
 // Si la computadora es compatible, esta ctivo el wake-on-lan y en la misma red la pc encenderá.
