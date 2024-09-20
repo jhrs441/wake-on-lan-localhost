@@ -15,14 +15,14 @@ app.use(express.json());
 app.get('/wake/:mac', (req, res) => {
     const macAddress = req.params.mac;
     if (!macAddress) {
-        return res.status(400).send('Se requiere la direccion MAC');
+        return res.status(400).send('MAC address is required');
     }
 
     wol.wake(macAddress, (error) => {
         if (error) {
-            return res.status(500).send('Error al enviar el paquete Wake-on-LAN');
+            return res.status(500).send('Failed to send Wake-on-LAN packet');
         }
-        res.send('Paquete Wake-on-LAN enviado con éxito');
+        res.send('Wake-on-LAN packet sent successfully');
     });
 });
 
